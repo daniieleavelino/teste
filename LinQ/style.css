@@ -404,6 +404,8 @@ h2 {
   padding-top: 5rem;
 }
 
+
+
 /* Grupo de chamadas para ação no hero */
 .cta-group {
   display: flex;
@@ -661,7 +663,8 @@ textarea:focus {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 920px) {
-  /* Layout responsivo para colunas únicas */
+
+  /* ===== LAYOUT GLOBAL ===== */
   .split-grid,
   .split-grid.reverse,
   .cards-grid,
@@ -671,12 +674,11 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
-  /* Botão de menu visível em telas menores */
+  /* ===== NAVBAR MOBILE ===== */
   .menu-toggle {
     display: inline-block;
   }
 
-  /* Estilo do menu mobile fechado */
   .menu {
     background: var(--white);
     border: 1px solid rgba(31, 78, 95, 0.12);
@@ -694,14 +696,57 @@ textarea:focus {
     width: min(280px, 92vw);
   }
 
-  /* Menu quando aberto em mobile */
   .menu.is-open {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
 
-  /* Ajuste do cartão de depoimento em telas pequenas */
+  /* ===== HERO MOBILE (AJUSTADO) ===== */
+  .hero .container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-image: none; /* remove bg desktop */
+  }
+
+  .hero-content {
+    order: 1;
+    padding-top: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-content .lead {
+    font-size: 1rem;
+  }
+
+  .cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-visual {
+    order: 2;
+    width: 100%;
+    height: 260px;
+    margin-top: 1.5rem;
+
+    background-image: url("imagens/hero-mobile.webp"); /* 👈 sua imagem mobile */
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+  }
+
+  /* ===== CARDS / COMPONENTES ===== */
   .testimonial-card {
     align-items: flex-start;
   }
