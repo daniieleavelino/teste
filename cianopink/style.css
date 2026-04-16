@@ -1,0 +1,658 @@
+﻿/* ==========================================================================
+   --------- VARIÁVEIS E BASE ---------
+   ========================================================================== */
+
+/* Definição das cores e gradientes globais do projeto */
+:root {
+    --color-cyan: #30C5FF;
+    --color-purple: #B026FF;
+    --color-pink: #FF00FF;
+    --text-dark: #1E1E2F;
+    --text-muted: #6B6B7B;
+    --gradient-main: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-pink) 100%);
+}
+
+/* Configurações de fonte e cor padrão para o corpo do site */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+}
+
+/* Ajuste de espaçamento entre letras para títulos */
+h1, h2, h3, h4 {
+    letter-spacing: -0.03em;
+}
+
+/* Estilo para textos de destaque pequenos (acima de títulos) */
+.eyebrow-text-sm {
+    color: var(--color-purple);
+    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+}
+
+/* Aplicação de gradiente colorido diretamente no texto */
+.text-gradient-purple {
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Linha decorativa colorida abaixo de títulos */
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-main);
+    border-radius: 10px;
+}
+
+/* Fundo com o gradiente principal da marca */
+.bg-gradient-custom {
+    background: var(--gradient-main);
+}
+
+/* Texto em tom de cinza suave */
+.text-light-gray {
+    color: var(--text-muted) !important;
+    font-size: 0.95rem;
+}
+
+/* Borda sutil para divisores e rodapé */
+.border-subtle {
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+
+/* ==========================================================================
+   --------- BLOCO DE BOTÕES DA HERO (COM EFEITO GLOW/BLUR) ---------
+   ========================================================================== */
+
+/* 1. Botão Principal (Preenchido) */
+.btn-gradient {
+    background: var(--gradient-main);
+    border: none;
+    color: white;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.btn-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-main);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(20px); /* Intensidade do brilho */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    color: white;
+}
+
+.btn-gradient:hover::before {
+    opacity: 0.8; /* Mostra o brilho no hover */
+    transform: scale(1.1); /* Faz o brilho expandir para fora do botão */
+}
+
+/* 2. Botão Secundário (Outline com Gradiente + Glow Premium) */
+.btn-outline-dark {
+    /* Aparência base (ANTES) */
+    border: 3px solid transparent;
+    border-radius: 50px !important;
+
+    background-image: linear-gradient(white, white), var(--gradient-main);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    color: var(--text-dark);
+    font-weight: 500;
+
+    position: relative;
+    z-index: 1;
+
+    transition: transform 0.3s ease;
+}
+
+/* Glow (aura) */
+.btn-outline-dark::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+
+    background: var(--gradient-main);
+    border-radius: inherit;
+
+    z-index: -1;
+    opacity: 0;
+
+    filter: blur(15px);
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    pointer-events: none;
+}
+
+/* Hover / Focus */
+.btn-outline-dark:hover,
+.btn-outline-dark:focus,
+.btn-check:focus + .btn-outline-dark {
+
+    /* 🔒 Mantém o visual original */
+    background-image: linear-gradient(white, white), var(--gradient-main);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    border: 3px solid transparent;
+
+    /* 🔒 Texto sempre escuro */
+    color: var(--text-dark) !important;
+
+    /* ✨ Efeito */
+    transform: translateY(-5px);
+}
+
+/* Glow ativo */
+.btn-outline-dark:hover::before,
+.btn-outline-dark:focus::before {
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+/* ==========================================================================
+   --------- NAVBAR ---------
+   ========================================================================== */
+
+/* LOGO SVG HEADER */
+.logo-svg {
+    width: 160px; /* controla tamanho */
+    height: auto;
+    display: block;
+}
+
+/* Ajuste fino no alinhamento */
+.navbar-brand {
+    gap: 8px;
+}
+
+/* Estilo dos links do menu de navegação */
+.nav-link {
+    color: var(--text-dark) !important;
+    position: relative;
+}
+
+/* Linha indicadora abaixo do link ativo no menu */
+.active-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background-color: var(--text-dark);
+}
+
+
+/* ==========================================================================
+   --------- HERO ---------
+   ========================================================================== */
+
+/* Área que contém as imagens sobrepostas de celulares/telas */
+.hero-mockup-container {
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagem de fundo do mockup com inclinação 3D */
+.mockup-back {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    width: 80%;
+    max-width: 450px;
+    z-index: 1;
+    transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+    border: 8px solid white;
+    transition: transform 0.5s ease;
+}
+
+/* Imagem da frente do mockup (celular) com bordas arredondadas e sombra */
+.mockup-front {
+    position: absolute;
+    left: 0;
+    bottom: 17%;
+    width: 45%;
+    max-width: 250px;
+    z-index: 2;
+    transform: perspective(2000px) translateX(10%) rotateY(-3deg) rotateZ(-3deg);
+    border: 10px solid #1c1c1c;
+    border-radius: 35px;
+    box-shadow: -20px 30px 40px rgba(0,0,0,0.2) !important;
+}
+
+/* Estilização do Novo Celular à Direita */
+/* Estilização do Terceiro Mockup (Formato de Celular) */
+.mockup-right-phone {
+    position: absolute;
+    
+    /* Posição: ajustada para a direita sobrepondo o PC */
+    bottom: 17%;
+    right: 1%;
+    
+    /* Tamanho: Largura menor para parecer um celular */
+    width: 20%; 
+    
+    /* FORÇANDO O FORMATO DE TELA DE CELULAR */
+    aspect-ratio: 9.5 / 19; /* Proporção de tela de smartphone */
+    object-fit: cover;    /* Faz a imagem preencher a tela sem esticar */
+    
+    /* SIMULANDO O HARDWARE (O CORPO DO CELULAR) */
+    border: 3px solid #1c1c1c; /* Borda preta grossa como a moldura do celular */
+    border-radius: 15px;       /* Cantos arredondados estilo iPhone/Android */
+    box-shadow: -20px 30px 40px rgba(0,0,0,0.2) ;
+    background-color: #0000;
+    /* Camada: deve ficar na frente do PC (z-index do PC costuma ser 1) */
+    z-index: 3;
+    
+    /* Efeito de Profundidade */
+    filter: drop-shadow(20px 20px 40px rgba(0, 0, 0, 0.3));
+    transform: perspective(2000px) rotateY(-5deg) rotateZ(5deg); /* Leve inclinação para simetria */
+    
+    transition: all 0.4s ease;
+}
+
+/* Ajuste para não sumir ou quebrar em telas médias */
+@media (max-width: 991px) {
+    .mockup-right-phone {
+        width: 30%;
+        right: 0;
+        bottom: 5%;
+    }
+}
+
+/* Animações de hover para todos os mockups do hero */
+.mockup-back,
+.mockup-front,
+.mockup-right-phone {
+    transition: transform 0.5s ease, box-shadow 0.4s ease;
+}
+
+.hero-mockup-container:hover .mockup-back {
+    transform: perspective(1000px) rotateY(-13deg) rotateX(3deg) translateX(8px);
+}
+
+.hero-mockup-container:hover .mockup-front {
+    transform: perspective(2000px) rotateY(7deg) rotateZ(-3deg) translateY(-8px);
+}
+
+.hero-mockup-container:hover .mockup-right-phone {
+    transform: perspective(2000px) rotateY(-4deg) rotateZ(8deg) translateY(-6px);
+}
+
+/* Animação de hover para todos os mockups das miniaturas de projeto */
+.project-card {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+.project-mockup {
+    overflow: hidden;
+    border-radius: 24px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-mockup img {
+    width: 100%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-mockup img {
+    transform: scale(1.05) rotateZ(0.4deg);
+}
+
+.project-card:hover .project-mockup {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* --------- BOLHA VIBRANTE --------- */
+
+.hero-blob-vibrante {
+    position: absolute;
+    /* 1. CENTRALIZAÇÃO ABSOLUTA: A bolha precisa de um ponto de origem */
+    top: 50%;
+    left: 50%;
+    
+    /* 2. ESCALA: Usamos 'vw' (viewport width) para garantir que ela seja enorme 
+       independente do tamanho da coluna do Bootstrap */
+    width: 140%;  /* Experimente 140% se quiser ainda maior */
+    height: auto;
+    
+    /* 3. POSICIONAMENTO FINO: 
+       -50%, -50% centraliza. 
+       Ajustamos para -40%, -60% para que ela "suba" um pouco atrás do PC, 
+       exatamente como no seu conceito de design. */
+    transform: translate(-45%, -48.5%) scale(1.2);
+    
+    /* 4. CAMADAS E VISIBILIDADE */
+    z-index: 1; /* Fica atrás do mockup-wrapper que é z-index: 2 */
+    opacity: 1;
+    pointer-events: none; /* Garante que a bolha não intercepte cliques nos botões */
+}
+
+.hero-blob-vibrante svg {
+    width: 100%;
+    height: 100%;
+    /* Mantém a proporção do desenho do blob */
+    overflow: visible; 
+}
+
+
+/* ==========================================================================
+   --------- DOR ---------
+   ========================================================================== */
+
+/* Fundo em gradiente suave para a seção de problema/dor do cliente */
+.sessao-dor-suave {
+    background: linear-gradient(135deg, #E6FBFF 0%, #FFFFFF 50%, #FFF0FF 100%) !important;
+    padding: 100px 0;
+    border-top: 1px solid rgba(48, 197, 255, 0.05);
+}
+
+/* Cor do título da seção de dor */
+.sessao-dor-suave h2 {
+    color: #1E1E2F !important;
+}
+
+/* Cor do texto descritivo da seção de dor */
+.sessao-dor-suave p {
+    color: #4A4A68 !important;
+}
+
+
+/* ==========================================================================
+   --------- SERVIÇOS ---------
+   ========================================================================== */
+
+/* Cor de fundo da seção de serviços */
+.services-section {
+    background-color: #fff;
+}
+
+/* Cartão colorido de serviço com proporção fixa e sombra */
+.project-card {
+    background: linear-gradient(135deg, #30C5FF 0%, #FF00FF 100%);
+    border-radius: 20px;
+    aspect-ratio: 2 / 3.2;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(48, 197, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de subir o card ao passar o mouse */
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Alinhamento interno do conteúdo do card de serviço */
+.project-card-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo do título dentro do card de serviço */
+.project-card-title {
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+/* Moldura interna para a imagem do projeto no card */
+.project-mockup {
+    width: 100%;
+    margin-top: auto;
+    background: #fff;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    height: 70%;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+}
+
+/* Ajuste da imagem dentro do mockup do card */
+.project-mockup img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s ease;
+}
+
+/* Zoom na imagem ao passar o mouse no card de serviço */
+.project-card:hover .project-mockup img {
+    transform: scale(1.05);
+}
+
+
+/* ==========================================================================
+   --------- PROJETOS ---------
+   ========================================================================== */
+
+/* Cartão de projeto dividido com bordas arredondadas e sombra leve */
+.equal-split-card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #EEF0F8;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Efeito de destaque no hover do card de projeto */
+.equal-split-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Área superior do card de projeto para fotos ou vídeos */
+.media-half {
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Zoom na mídia caso ela seja um link clicável */
+a.media-half:hover img {
+    transform: scale(1.06);
+}
+
+/* Ajuste de preenchimento de imagens e vídeos nos projetos */
+.media-half img, 
+.media-half video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Área de texto e descrição do projeto */
+.text-half {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+}
+
+/* Etiqueta flutuante sobre a imagem do projeto */
+.case-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* ==========================================================================
+   --------- PROCESSO ---------
+   ========================================================================== */
+
+/* Seção de metodologia com fundo em gradiente de tons claros */
+#processo {
+    background: linear-gradient(135deg, #fdfaff 0%, #f0faff 100%) !important;
+    padding: 100px 0;
+    border-top: 1px solid rgba(176, 38, 255, 0.05);
+}
+
+/* Linha visual que conecta os passos do processo */
+.process-line {
+    position: absolute;
+    top: 35px;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-cyan) 0%, var(--color-pink) 100%);
+    opacity: 0.4; 
+    z-index: 0;
+}
+
+/* Círculo numerado de cada etapa do processo */
+.step-circle {
+    width: 70px;
+    height: 70px;
+    border: 3px solid;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background-color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Estilo do círculo de etapa na cor Ciano */
+.border-cyan { 
+    border-color: var(--color-cyan); 
+    color: var(--color-cyan); 
+    box-shadow: 0 10px 20px rgba(48, 197, 255, 0.1); 
+}
+
+/* Estilo do círculo de etapa na cor Rosa */
+.border-pink { 
+    border-color: var(--color-pink); 
+    color: var(--color-pink); 
+    box-shadow: 0 10px 20px rgba(255, 0, 255, 0.1); 
+}
+
+/* Efeito de pulo no círculo numérico ao passar o mouse */
+.process-step:hover .step-circle {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(176, 38, 255, 0.2);
+}
+
+
+/* ==========================================================================
+   --------- FAQ ---------
+   ========================================================================== */
+
+/* Estilização dos itens do acordeão de perguntas frequentes */
+.custom-accordion .accordion-item {
+    border: 1px solid #f0f0f5 !important;
+    transition: all 0.3s ease;
+}
+
+/* Botão que abre a pergunta do FAQ */
+.custom-accordion .accordion-button {
+    padding: 20px 25px;
+    font-size: 1.1rem;
+    color: var(--text-dark) !important;
+}
+
+/* Troca do ícone padrão do Bootstrap por uma seta personalizada roxa */
+.custom-accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23B026FF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* Destaque visual (borda ciano) quando uma pergunta está aberta */
+.custom-accordion .accordion-item:has(.accordion-button:not(.collapsed)) {
+    border-color: var(--color-cyan) !important;
+    box-shadow: 0 10px 25px rgba(48, 197, 255, 0.1) !important;
+}
+
+
+/* ==========================================================================
+   --------- FOOTER ---------
+   ========================================================================== */
+
+/* Fundo escuro e layout do rodapé */
+.footer-bg {
+    background: #131018;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilo circular dos botões de redes sociais no rodapé */
+.social-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    color: #F8F9FA;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Mudança de cor para neon ciano ao passar o mouse nos ícones sociais */
+.social-icon:hover {
+    background: #00FFFF;
+    color: #0B090F;
+    transform: translateY(-5px);
+    border-color: #00FFFF;
+    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.3);
+}
+
+
+/* ==========================================================================
+   --------- RESPONSIVIDADE ---------
+   ========================================================================== */
+
+/* Ajustes para telas menores (Tablets e Celulares) */
+@media (max-width: 768px) {
+    .project-card-title { font-size: 0.85rem; }
+    .media-half { height: 200px; }
+    .process-line { display: none; }
+    .step-circle { margin-left: auto; margin-right: auto; }
+}

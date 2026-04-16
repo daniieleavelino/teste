@@ -32,19 +32,21 @@ body {
 
 /* Link de pular para o conteúdo */
 .skip-link {
-  left: -9999px;
   position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-150%);
+  background: var(--white);
+  color: var(--text-main);
+  padding: 0.6rem 1rem;
+  border-radius: 0.4rem;
+  z-index: 9999;
+  transition: transform 0.2s ease;
 }
 
-/* Estilo do link de pular quando recebe foco */
-.skip-link:focus {
-  background: var(--white);
-  border-radius: 0.4rem;
-  color: var(--text-main);
-  left: 1rem;
-  padding: 0.6rem 1rem;
-  top: 1rem;
-  z-index: 9999;
+/* só aparece quando focado via teclado */
+.skip-link:focus-visible {
+  transform: translateY(1rem);
 }
 
 /* Container centralizado para todo o layout */
@@ -390,18 +392,49 @@ h2 {
   margin: 0;
 }
 
+
 /* ===== HERO ===== */
 .hero {
+  position: relative;
   padding-top: 0;
 }
 
-.hero .container {
+/* 👇 IMAGEM DE FUNDO REAL */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
   background-image: url("imagens/fundo-bg.webp");
-  background-position: top center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-position: right center;
+
+  z-index: 0;
+}
+
+/* 👇 FADE SUAVE (O SEGREDO DO EFEITO) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(247, 244, 238, 1) 15%,
+    rgba(247, 244, 238, 0.85) 25%,
+    rgba(247, 244, 238, 0.4) 30%,
+    rgba(247, 244, 238, 0) 55%
+  );
+
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+
+  padding-top: 2.5rem;
   padding-bottom: 3rem;
-  padding-top: 5rem;
 }
 
 /* Grupo de chamadas para ação no hero */
@@ -661,7 +694,8 @@ textarea:focus {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 920px) {
-  /* Layout responsivo para colunas únicas */
+
+  /* ===== LAYOUT GLOBAL ===== */
   .split-grid,
   .split-grid.reverse,
   .cards-grid,
@@ -671,12 +705,11 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
-  /* Botão de menu visível em telas menores */
+  /* ===== NAVBAR MOBILE ===== */
   .menu-toggle {
     display: inline-block;
   }
 
-  /* Estilo do menu mobile fechado */
   .menu {
     background: var(--white);
     border: 1px solid rgba(31, 78, 95, 0.12);
@@ -694,15 +727,83 @@ textarea:focus {
     width: min(280px, 92vw);
   }
 
-  /* Menu quando aberto em mobile */
   .menu.is-open {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
 
-  /* Ajuste do cartão de depoimento em telas pequenas */
+/* ❌ REMOVE A IMAGEM E O FADE */
+  .hero::before,
+  .hero::after {
+    display: none;
+    content: none;
+  }
+
+  /* opcional: garante fundo limpo */
+  .hero {
+    background: var(--bg-main);
+  }
+
+  /* espaçamento */
+  .hero .container {
+    padding-top: 1.2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* remove qualquer espaçamento extra */
+  .hero-content {
+    padding-top: 0;
+  }
+
+  /* tipografia */
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-content .lead {
+    font-size: 1rem;
+  }
+
+  /* botões */
+  .cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+  /* ===== CARDS / COMPONENTES ===== */
   .testimonial-card {
     align-items: flex-start;
   }
+}
+
+/*imagem proposta*/
+@media (max-width: 920px) {
+
+  .institutional-image {
+    background-image: url("imagens/proposta-mobile2.webp");
+
+    /* 🔥 força redução */
+    width: 85% !important;
+    max-width: 320px;
+
+    /* 🔥 centraliza */
+    margin: 1.5rem auto 0;
+
+    /* mantém visual */
+    height: 220px;
+    min-height: unset;
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 16px;
+  }
+
 }
