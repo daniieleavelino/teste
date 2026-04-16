@@ -696,6 +696,11 @@ textarea:focus {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 920px) {
+  .site-header .container {
+    width: 100%;
+    padding-left: 0.9rem;
+    padding-right: 0;
+  }
 
   /* ===== LAYOUT GLOBAL ===== */
   .split-grid,
@@ -710,7 +715,7 @@ textarea:focus {
   /* ===== NAVBAR MOBILE ===== */
   .menu-toggle {
     display: inline-block;
-    margin-right: -0.35rem;
+    margin-right: 0;
   }
 
   .menu {
@@ -764,18 +769,18 @@ textarea:focus {
     padding-top: 0;
     text-align: center;
     width: 100%;
+    text-align: left;
   }
 
   .hero-content h1 {
     font-size: clamp(2rem, 7vw, 2.6rem);
     line-height: 1.15;
-    margin-bottom: 0;
-    text-align: left;
+    margin-bottom: 0;    
   }
 
   .hero-content .lead {
     font-size: clamp(1rem, 3.8vw, 1.1rem);
-    margin: 0 auto;
+    margin: 0;
     max-width: 30ch;
     text-align: left;
   }
@@ -793,7 +798,7 @@ textarea:focus {
   }
 
   .hero-image-mobile {
-    background-image: url("imagens/upscalemedia-transformed.png");
+    background-image: url("imagens/hero-mobile.webp");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -822,7 +827,7 @@ textarea:focus {
   }
 
   .institutional-image {
-    background-image: url("imagens/proposta-mobile2.webp");
+    background-image: url("imagens/proposta-mobile.webp");
     background-position: center top;
     background-size: cover;
     border-radius: 0;
