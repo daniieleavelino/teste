@@ -710,6 +710,7 @@ textarea:focus {
   /* ===== NAVBAR MOBILE ===== */
   .menu-toggle {
     display: inline-block;
+    margin-right: -0.35rem;
   }
 
   .menu {
@@ -746,9 +747,9 @@ textarea:focus {
   }
 
   .hero .container {
-    min-height: calc(100vh - 78px);
-    padding-bottom: 3rem;
-    padding-top: 1rem;
+    min-height: auto;
+    padding-bottom: 1.25rem;
+    padding-top: 0;
     display: flex;
     align-items: flex-start;
   }
@@ -769,19 +770,21 @@ textarea:focus {
     font-size: clamp(2rem, 7vw, 2.6rem);
     line-height: 1.15;
     margin-bottom: 0;
+    text-align: left;
   }
 
   .hero-content .lead {
     font-size: clamp(1rem, 3.8vw, 1.1rem);
     margin: 0 auto;
     max-width: 30ch;
+    text-align: left;
   }
 
   .cta-group {
     align-items: stretch;
     flex-direction: column;
     gap: 0.9rem;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
   }
 
   .cta-group .btn {
@@ -794,14 +797,14 @@ textarea:focus {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 18px;
+    border-radius: 0;
     box-shadow: var(--shadow);
     display: block;
-    height: clamp(180px, 58vw, 240px);
-    margin: 0 0 0.75rem;
-    max-width: 100%;
+    height: clamp(165px, 52vw, 220px);
+    margin: 0 calc(50% - 50vw) 0.75rem;
+    max-width: none;
     order: -1;
-    width: 100%;
+    width: 100vw;
   }
 
   .testimonial-card {
@@ -810,16 +813,24 @@ textarea:focus {
 }
 
 @media (max-width: 920px) {
+  .section {
+    padding: 3.25rem 0;
+  }
+
+  .hero {
+    padding-top: 0;
+  }
+
   .institutional-image {
     background-image: url("imagens/proposta-mobile2.webp");
     background-position: center top;
     background-size: cover;
-    border-radius: 16px;
+    border-radius: 0;
     height: 220px;
-    margin: 1.5rem auto 0;
-    max-width: 320px;
+    margin: 0.75rem calc(50% - 50vw) 0;
+    max-width: none;
     min-height: unset;
-    width: 100%;
+    width: 100vw;
   }
 
   .split-grid.reverse {
