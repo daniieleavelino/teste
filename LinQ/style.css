@@ -64,16 +64,9 @@ body {
   background: rgba(247, 244, 238, 0.92);
   border-bottom: 1px solid rgba(200, 160, 74, 0.15);
   backdrop-filter: blur(8px);
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
   z-index: 1000;
-}
-
-main {
-  padding-top: 5.5rem;
 }
 
 /* Layout interno do header com logo e navegaÃ§Ã£o */
@@ -407,7 +400,7 @@ h2 {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  padding: 5rem 0;
+  padding: 2.5rem 0;
 }
 
 /* ðŸ‘‡ IMAGEM DE FUNDO REAL */
@@ -727,7 +720,7 @@ textarea:focus {
   }
 
   main {
-    padding-top: 5.5rem;
+    padding-top: 4.8rem;
   }
 
   /* ===== LAYOUT GLOBAL ===== */
@@ -782,6 +775,7 @@ textarea:focus {
 
   .hero {
     background: var(--bg-main);
+    padding-top: 0;
   }
 
   .hero .container {
@@ -838,7 +832,7 @@ textarea:focus {
     border-radius: 0;
     box-shadow: var(--shadow);
     display: block;
-    height: clamp(165px, 52vw, 220px);
+    height: clamp(180px, 58vw, 260px);
     margin: 0 calc(50% - 50vw) 0.75rem;
     max-width: none;
     order: -1;
@@ -856,7 +850,7 @@ textarea:focus {
   }
 
   .hero {
-    padding: 3.25rem 0;
+    padding: 0 0 3.25rem;
   }
 
   .institutional-image {

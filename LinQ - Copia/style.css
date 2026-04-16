@@ -20,6 +20,7 @@
 /* ===== BASE ===== */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -28,6 +29,7 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   margin: 0;
+  overflow-x: hidden;
 }
 
 /* Link de pular para o conteÃºdo */
@@ -398,7 +400,7 @@ h2 {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  padding-top: 0;
+  padding: 5rem 0;
 }
 
 /* ðŸ‘‡ IMAGEM DE FUNDO REAL */
@@ -698,6 +700,7 @@ textarea:focus {
 @media (max-width: 920px) {
   .nav-container {
     align-items: center;
+    justify-content: flex-start;
     position: relative;
   }
 
@@ -705,6 +708,19 @@ textarea:focus {
     width: 100%;
     padding-left: 0.9rem;
     padding-right: 0.9rem;
+  }
+
+  .site-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    will-change: transform;
+  }
+
+  main {
+    padding-top: 5.5rem;
   }
 
   /* ===== LAYOUT GLOBAL ===== */
@@ -720,6 +736,7 @@ textarea:focus {
   /* ===== NAVBAR MOBILE ===== */
   .menu-toggle {
     display: inline-block;
+    margin-left: auto;
     margin-right: 0;
   }
 
@@ -758,11 +775,12 @@ textarea:focus {
 
   .hero {
     background: var(--bg-main);
+    padding-top: ;
   }
 
   .hero .container {
     min-height: auto;
-    padding-bottom: 1.25rem;
+    padding-bottom: 0;
     padding-top: 0;
     display: flex;
     align-items: flex-start;
@@ -832,7 +850,7 @@ textarea:focus {
   }
 
   .hero {
-    padding-top: 0;
+    padding: 3.25rem 0;
   }
 
   .institutional-image {
