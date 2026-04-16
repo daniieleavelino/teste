@@ -1,4 +1,4 @@
-/* ===== VARIABLES ===== */
+﻿/* ===== VARIABLES ===== */
 :root {
   --bg-main: #F7F4EE;
   --bg-soft: #FAF7F1;
@@ -30,7 +30,7 @@ body {
   margin: 0;
 }
 
-/* Link de pular para o conteúdo */
+/* Link de pular para o conteÃºdo */
 .skip-link {
   position: absolute;
   top: 0;
@@ -44,7 +44,7 @@ body {
   transition: transform 0.2s ease;
 }
 
-/* só aparece quando focado via teclado */
+/* sÃ³ aparece quando focado via teclado */
 .skip-link:focus-visible {
   transform: translateY(1rem);
 }
@@ -57,7 +57,7 @@ body {
 
 /* ===== NAVBAR ===== */
 
-/* Cabeçalho fixo e com fundo translucido */
+/* CabeÃ§alho fixo e com fundo translucido */
 .site-header {
   background: rgba(247, 244, 238, 0.92);
   border-bottom: 1px solid rgba(200, 160, 74, 0.15);
@@ -67,7 +67,7 @@ body {
   z-index: 1000;
 }
 
-/* Layout interno do header com logo e navegação */
+/* Layout interno do header com logo e navegaÃ§Ã£o */
 .nav-container {
   align-items: flex-start;
   display: flex;
@@ -76,7 +76,7 @@ body {
   padding: 0.7rem 0;
 }
 
-/* Link principal da marca com logo e identificação */
+/* Link principal da marca com logo e identificaÃ§Ã£o */
 .brand {
   align-items: flex-start;
   color: inherit;
@@ -85,7 +85,7 @@ body {
   text-decoration: none;
 }
 
-/* Agrupa os textos da marca e o subtítulo */
+/* Agrupa os textos da marca e o subtÃ­tulo */
 .brand-text {
   align-items: flex-start;
   display: flex;
@@ -97,7 +97,7 @@ body {
   padding-top: 0.12rem;
 }
 
-/* Texto secundário e subtítulo da marca */
+/* Texto secundÃ¡rio e subtÃ­tulo da marca */
 .brand-sub {
   color: var(--text-gold);
   font-size: 0.75rem;
@@ -107,7 +107,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Dimensões dos elementos da marca */
+/* DimensÃµes dos elementos da marca */
 .logo,
 .brand-symbol {
   display: block;
@@ -121,12 +121,12 @@ body {
   object-fit: contain;
 }
 
-/* Ajuste de imagem para o símbolo da marca */
+/* Ajuste de imagem para o sÃ­mbolo da marca */
 .brand-symbol {
   object-fit: contain;
 }
 
-/* Lista de navegação principal */
+/* Lista de navegaÃ§Ã£o principal */
 .menu {
   display: flex;
   gap: 1.2rem;
@@ -148,7 +148,7 @@ body {
   color: var(--text-gold);
 }
 
-/* Botão de menu mobile */
+/* BotÃ£o de menu mobile */
 .menu-toggle {
   background: transparent;
   border: 0;
@@ -158,7 +158,7 @@ body {
   width: 42px;
 }
 
-/* Linhas do ícone de menu hamburguer */
+/* Linhas do Ã­cone de menu hamburguer */
 .menu-toggle span {
   background: var(--text-main);
   display: block;
@@ -168,7 +168,7 @@ body {
 
 /* ===== TYPOGRAPHY ===== */
 
-/* Estilo base para títulos principais */
+/* Estilo base para tÃ­tulos principais */
 h1,
 h2,
 h3 {
@@ -177,17 +177,17 @@ h3 {
   margin: 0 0 1rem;
 }
 
-/* Tamanho responsivo do título principal */
+/* Tamanho responsivo do tÃ­tulo principal */
 h1 {
   font-size: clamp(2rem, 3.6vw, 3.4rem);
 }
 
-/* Tamanho responsivo dos subtítulos */
+/* Tamanho responsivo dos subtÃ­tulos */
 h2 {
   font-size: clamp(1.7rem, 3vw, 2.5rem);
 }
 
-/* Texto de destaque e lead do herói */
+/* Texto de destaque e lead do herÃ³i */
 .lead {
   font-size: 1.1rem;
   max-width: 56ch;
@@ -202,13 +202,13 @@ h2 {
   text-transform: uppercase;
 }
 
-/* Base de exibição para logotipo textual */
+/* Base de exibiÃ§Ã£o para logotipo textual */
 .wordmark {
   display: inline-block;
   vertical-align: -0.08em;
 }
 
-/* Ajuste vertical padrão para variações da wordmark */
+/* Ajuste vertical padrÃ£o para variaÃ§Ãµes da wordmark */
 .wordmark-inline,
 .wordmark-title,
 .wordmark-header,
@@ -222,12 +222,12 @@ h2 {
   width: auto;
 }
 
-/* Wordmark usada em títulos e chamadas */
+/* Wordmark usada em tÃ­tulos e chamadas */
 .wordmark-title {
   height: 1.12em;
 }
 
-/* Wordmark de cabeçalho para o topo do site */
+/* Wordmark de cabeÃ§alho para o topo do site */
 .wordmark-header {
   height: 1.78rem;
   margin-left: 0;
@@ -238,7 +238,7 @@ h2 {
   vertical-align: -0.1em;
 }
 
-/* Ajuste da wordmark em botões */
+/* Ajuste da wordmark em botÃµes */
 .btn .wordmark-inline {
   height: 1.07em;
   vertical-align: 0;
@@ -246,17 +246,17 @@ h2 {
 
 /* ===== GLOBAL LAYOUT ===== */
 
-/* Espaçamento vertical padrão entre seções */
+/* EspaÃ§amento vertical padrÃ£o entre seÃ§Ãµes */
 .section {
   padding: 5rem 0;
 }
 
-/* Fundo alternativo para seções destacadas */
+/* Fundo alternativo para seÃ§Ãµes destacadas */
 .alt-bg {
   background: var(--bg-soft);
 }
 
-/* Grid de duas colunas usada em seções principais */
+/* Grid de duas colunas usada em seÃ§Ãµes principais */
 .split-grid {
   align-items: center;
   display: grid;
@@ -264,19 +264,19 @@ h2 {
   grid-template-columns: 1.1fr 1fr;
 }
 
-/* Variedade do grid onde o conteúdo vem após a imagem */
+/* Variedade do grid onde o conteÃºdo vem apÃ³s a imagem */
 .split-grid.reverse {
   grid-template-columns: 1fr 1.1fr;
 }
 
-/* Área de conteúdo do hero com espaçamento superior */
+/* Ãrea de conteÃºdo do hero com espaÃ§amento superior */
 .hero-content {
   max-width: 100%;
   padding-top: 2rem;
   width: 100%;
 }
 
-/* Grid de cards de serviços e áreas */
+/* Grid de cards de serviÃ§os e Ã¡reas */
 .cards-grid {
   display: grid;
   gap: 1rem;
@@ -284,28 +284,30 @@ h2 {
   margin-top: 2rem;
 }
 
-/* Imagem institucional de apoio na seção de proposta */
+/* Imagem institucional de apoio na seÃ§Ã£o de proposta */
 .institutional-image {
   background-image: url("imagens/proposta.webp");
   background-position: center;
   background-size: cover;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  display: block;
   min-height: 400px;
+  width: 100%;
 }
 
-/* Texto destacado com borda lateral para chamar atenção */
+/* Texto destacado com borda lateral para chamar atenÃ§Ã£o */
 .proposta-text {
   border-left: 4px solid var(--text-gold);
   padding-left: 1.5rem;
 }
 
-/* Texto principal da seção Sobre */
+/* Texto principal da seÃ§Ã£o Sobre */
 .about-text {
   text-align: left;
 }
 
-/* Cartões de área de formação */
+/* CartÃµes de Ã¡rea de formaÃ§Ã£o */
 .card {
   background: var(--white);
   border: 1px solid rgba(31, 78, 95, 0.08);
@@ -323,7 +325,7 @@ h2 {
   margin-top: 2rem;
 }
 
-/* Layout de três colunas para a equipe */
+/* Layout de trÃªs colunas para a equipe */
 .team-grid {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -333,7 +335,7 @@ h2 {
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* Cartões de perfil e depoimento com estilo uniforme */
+/* CartÃµes de perfil e depoimento com estilo uniforme */
 .profile-card,
 .testimonial-card {
   background: var(--white);
@@ -342,7 +344,7 @@ h2 {
   box-shadow: 0 12px 28px rgba(31, 78, 95, 0.09);
 }
 
-/* Imagem de capa do cartão de equipe e depoimento */
+/* Imagem de capa do cartÃ£o de equipe e depoimento */
 .profile-card img,
 .testimonial-card img {
   display: block;
@@ -355,7 +357,7 @@ h2 {
   height: 320px;
 }
 
-/* Cartão de depoimento com estrutura flexível */
+/* CartÃ£o de depoimento com estrutura flexÃ­vel */
 .testimonial-card {
   align-items: center;
   display: flex;
@@ -363,7 +365,7 @@ h2 {
   padding: 1.2rem;
 }
 
-/* Avatar circular no cartão de depoimento */
+/* Avatar circular no cartÃ£o de depoimento */
 .testimonial-card img {
   background: transparent;
   border-radius: 999px;
@@ -373,7 +375,7 @@ h2 {
   width: 84px;
 }
 
-/* Espaçamento interno dos conteúdos de cartão */
+/* EspaÃ§amento interno dos conteÃºdos de cartÃ£o */
 .profile-card-content,
 .testimonial-content {
   padding: 1.2rem;
@@ -399,25 +401,22 @@ h2 {
   padding-top: 0;
 }
 
-/* 👇 IMAGEM DE FUNDO REAL */
+/* ðŸ‘‡ IMAGEM DE FUNDO REAL */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-
   background-image: url("imagens/fundo-bg.webp");
   background-size: cover;
   background-position: right center;
-
   z-index: 0;
 }
 
-/* 👇 FADE SUAVE (O SEGREDO DO EFEITO) */
+/* ðŸ‘‡ FADE SUAVE (O SEGREDO DO EFEITO) */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     to right,
     rgba(247, 244, 238, 1) 15%,
@@ -425,7 +424,6 @@ h2 {
     rgba(247, 244, 238, 0.4) 30%,
     rgba(247, 244, 238, 0) 55%
   );
-
   z-index: 1;
 }
 
@@ -437,7 +435,7 @@ h2 {
   padding-bottom: 3rem;
 }
 
-/* Grupo de chamadas para ação no hero */
+/* Grupo de chamadas para aÃ§Ã£o no hero */
 .cta-group {
   display: flex;
   flex-wrap: wrap;
@@ -445,7 +443,11 @@ h2 {
   margin-top: 1.7rem;
 }
 
-/* Botões principais e secundários do site */
+.hero-image-mobile {
+  display: none;
+}
+
+/* BotÃµes principais e secundÃ¡rios do site */
 .btn {
   align-items: center;
   border: 2px solid transparent;
@@ -461,45 +463,45 @@ h2 {
   transition: box-shadow 150ms ease, transform 150ms ease;
 }
 
-/* Animação de hover e foco dos botões */
+/* AnimaÃ§Ã£o de hover e foco dos botÃµes */
 .btn:hover,
 .btn:focus-visible {
   box-shadow: 0 8px 18px rgba(31, 78, 95, 0.2);
   transform: translateY(-2px);
 }
 
-/* Botão primário com gradiente de destaque */
+/* BotÃ£o primÃ¡rio com gradiente de destaque */
 .btn-primary {
   background: linear-gradient(135deg, var(--accent-gold), var(--text-gold));
   box-shadow: 0 10px 20px rgba(215, 154, 58, 0.35);
   color: var(--white);
 }
 
-/* Hover reduzido para botão primário */
+/* Hover reduzido para botÃ£o primÃ¡rio */
 .btn-primary:hover {
   transform: translateY(-1px);
 }
 
-/* Botão secundário com borda suave */
+/* BotÃ£o secundÃ¡rio com borda suave */
 .btn-secondary {
   background: transparent;
   border-color: rgba(31, 78, 95, 0.35);
   color: var(--text-main);
 }
 
-/* Hover para botão secundário */
+/* Hover para botÃ£o secundÃ¡rio */
 .btn-secondary:hover {
   background: rgba(31, 78, 95, 0.06);
 }
 
 /* ===== CONTACT ===== */
 
-/* Espaçamento vertical extra para a seção de contato */
+/* EspaÃ§amento vertical extra para a seÃ§Ã£o de contato */
 .section-padding {
   padding: 80px 0;
 }
 
-/* Grid de duas colunas para conteúdo de contato */
+/* Grid de duas colunas para conteÃºdo de contato */
 .grid-2 {
   align-items: center;
   display: grid;
@@ -507,47 +509,47 @@ h2 {
   grid-template-columns: 1fr 1fr;
 }
 
-/* Fundo escuro para a seção de contato */
+/* Fundo escuro para a seÃ§Ã£o de contato */
 .contato {
   background: var(--text-main);
   color: var(--white);
 }
 
-/* Container interno da seção de contato */
+/* Container interno da seÃ§Ã£o de contato */
 .contato .container {
   max-width: 1200px;
   padding: 0 20px;
   width: min(1200px, 92%);
 }
 
-/* Título destacado da seção de contato */
+/* TÃ­tulo destacado da seÃ§Ã£o de contato */
 .contato h2 {
   color: var(--text-gold);
   margin-bottom: 1.5rem;
 }
 
-/* Subtítulo da área de contato */
+/* SubtÃ­tulo da Ã¡rea de contato */
 .contato h3 {
   color: var(--text-main);
 }
 
-/* Texto informativo secundário */
+/* Texto informativo secundÃ¡rio */
 .p2 {
   color: var(--text-main);
 }
 
-/* Bloco de informações de contato */
+/* Bloco de informaÃ§Ãµes de contato */
 .contato-info {
   align-self: start;
   position: relative;
 }
 
-/* Título interno do bloco de informações */
+/* TÃ­tulo interno do bloco de informaÃ§Ãµes */
 .contato-info h2 {
   margin-bottom: 1.5rem;
 }
 
-/* Texto das informações de contato */
+/* Texto das informaÃ§Ãµes de contato */
 .contato-info p {
   font-size: 1.1rem;
   margin-bottom: 1rem;
@@ -563,31 +565,31 @@ h2 {
   top: -1.5rem;
 }
 
-/* Ícones de contato com alinhamento e espaçamento */
+/* Ãcones de contato com alinhamento e espaÃ§amento */
 .contato-info p i {
   color: var(--text-gold);
   margin-right: 10px;
   width: 20px;
 }
 
-/* Bloco de formulário de contato */
+/* Bloco de formulÃ¡rio de contato */
 .contato-form {
   background: var(--white);
   border-radius: 10px;
   padding: 40px;
 }
 
-/* Cabeçalho do formulário de agendamento */
+/* CabeÃ§alho do formulÃ¡rio de agendamento */
 .contato-form h3 {
   margin-bottom: 0.5rem;
 }
 
-/* Texto explicativo do formulário */
+/* Texto explicativo do formulÃ¡rio */
 .contato-form p {
   margin-bottom: 1.5rem;
 }
 
-/* Campos de entrada do formulário de contato */
+/* Campos de entrada do formulÃ¡rio de contato */
 .contato-form form input {
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -596,7 +598,7 @@ h2 {
   width: 100%;
 }
 
-/* Botão de envio do formulário */
+/* BotÃ£o de envio do formulÃ¡rio */
 .contato-form button {
   border: none;
   border-radius: 5px;
@@ -607,26 +609,26 @@ h2 {
   width: auto;
 }
 
-/* Estilo hover/focus do botão do formulário */
+/* Estilo hover/focus do botÃ£o do formulÃ¡rio */
 .contato-form button:hover,
 .contato-form button:focus-visible {
   box-shadow: none;
   transform: none;
 }
 
-/* Estilo do botão principal do formulário de contato */
+/* Estilo do botÃ£o principal do formulÃ¡rio de contato */
 .btn-gemini {
   background: var(--accent-gold);
   color: var(--white);
   cursor: pointer;
 }
 
-/* Hover do botão de envio com cor de destaque */
+/* Hover do botÃ£o de envio com cor de destaque */
 .btn-gemini:hover {
   background: var(--text-gold);
 }
 
-/* Labels dos campos do formulário */
+/* Labels dos campos do formulÃ¡rio */
 label {
   display: block;
   font-weight: 600;
@@ -634,7 +636,7 @@ label {
   margin-top: 0.8rem;
 }
 
-/* Campo de formulário com aparência neutra */
+/* Campo de formulÃ¡rio com aparÃªncia neutra */
 input,
 textarea {
   background: #fff;
@@ -646,21 +648,21 @@ textarea {
   width: 100%;
 }
 
-/* Foco dos campos do formulário */
+/* Foco dos campos do formulÃ¡rio */
 input:focus,
 textarea:focus {
   border-color: var(--accent-gold);
   outline: 2px solid rgba(215, 154, 58, 0.45);
 }
 
-/* Mensagem de retorno do formulário */
+/* Mensagem de retorno do formulÃ¡rio */
 .form-feedback {
   font-weight: 500;
   margin-top: 0.6rem;
   min-height: 1.2rem;
 }
 
-/* Feedback exibido abaixo do formulário */
+/* Feedback exibido abaixo do formulÃ¡rio */
 #form-feedback {
   font-size: 0.95rem;
   margin-top: 15px;
@@ -670,14 +672,14 @@ textarea:focus {
 
 /* ===== FOOTER ===== */
 
-/* Área de rodapé com fundo claro e borda superior */
+/* Ãrea de rodapÃ© com fundo claro e borda superior */
 .site-footer {
   background: rgba(255, 255, 255, 0.9);
   border-top: 1px solid rgba(31, 78, 95, 0.12);
   padding: var(--space-md) 0;
 }
 
-/* Conteúdo interno do rodapé */
+/* ConteÃºdo interno do rodapÃ© */
 .footer-inner {
   color: rgba(31, 78, 95, 0.75);
   display: flex;
@@ -687,13 +689,23 @@ textarea:focus {
   text-align: center;
 }
 
-/* Nota de rodapé sem margens */
+/* Nota de rodapÃ© sem margens */
 .footer-note {
   margin: 0;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 920px) {
+  .nav-container {
+    align-items: center;
+    position: relative;
+  }
+
+  .site-header .container {
+    width: 100%;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
 
   /* ===== LAYOUT GLOBAL ===== */
   .split-grid,
@@ -708,6 +720,11 @@ textarea:focus {
   /* ===== NAVBAR MOBILE ===== */
   .menu-toggle {
     display: inline-block;
+    margin-right: 0;
+  }
+
+  nav[aria-label="Navegação principal"] {
+    position: static;
   }
 
   .menu {
@@ -720,7 +737,7 @@ textarea:focus {
     padding: 0.9rem;
     pointer-events: none;
     position: absolute;
-    right: 4%;
+    right: 0.9rem;
     top: 72px;
     transform: translateY(-6px);
     transition: all 0.25s ease;
@@ -733,77 +750,111 @@ textarea:focus {
     transform: translateY(0);
   }
 
-/* ❌ REMOVE A IMAGEM E O FADE */
   .hero::before,
   .hero::after {
-    display: none;
     content: none;
+    display: none;
   }
 
-  /* opcional: garante fundo limpo */
   .hero {
     background: var(--bg-main);
   }
 
-  /* espaçamento */
   .hero .container {
-    padding-top: 1.2rem;
-    padding-bottom: 2rem;
-  }
-
-  /* remove qualquer espaçamento extra */
-  .hero-content {
+    min-height: auto;
+    padding-bottom: 1.25rem;
     padding-top: 0;
+    display: flex;
+    align-items: flex-start;
   }
 
-  /* tipografia */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 34rem;
+    padding-inline: 0.35rem;
+    padding-top: 0;
+    text-align: center;
+    width: 100%;
+    text-align: left;
+  }
+
   .hero-content h1 {
-    font-size: 1.9rem;
+    font-size: clamp(2rem, 7vw, 2.6rem);
+    line-height: 1.15;
+    margin-bottom: 0;    
   }
 
   .hero-content .lead {
-    font-size: 1rem;
+    font-size: clamp(1rem, 3.8vw, 1.1rem);
+    margin: 0;
+    max-width: 30ch;
+    text-align: left;
   }
 
-  /* botões */
   .cta-group {
-    flex-direction: column;
     align-items: stretch;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 0.25rem;
   }
 
   .cta-group .btn {
-    width: 100%;
     justify-content: center;
+    width: 100%;
   }
-}
 
-  /* ===== CARDS / COMPONENTES ===== */
+  .hero-image-mobile {
+    background-image: url("imagens/hero-mobile.webp");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0;
+    box-shadow: var(--shadow);
+    display: block;
+    height: clamp(165px, 52vw, 220px);
+    margin: 0 calc(50% - 50vw) 0.75rem;
+    max-width: none;
+    order: -1;
+    width: 100vw;
+  }
+
   .testimonial-card {
     align-items: flex-start;
   }
 }
 
-/*imagem proposta*/
 @media (max-width: 920px) {
-
-  .institutional-image {
-    background-image: url("imagens/proposta-mobile2.webp");
-
-    /* 🔥 força redução */
-    width: 85% !important;
-    max-width: 320px;
-
-    /* 🔥 centraliza */
-    margin: 1.5rem auto 0;
-
-    /* mantém visual */
-    height: 220px;
-    min-height: unset;
-
-    background-size: cover;
-    background-position: center;
-
-    border-radius: 16px;
+  .section {
+    padding: 3.25rem 0;
   }
 
+  .hero {
+    padding-top: 0;
+  }
+
+  .institutional-image {
+    background-image: url("imagens/proposta-mobile.webp");
+    background-position: center top;
+    background-size: cover;
+    border-radius: 0;
+    height: 220px;
+    margin: 0.75rem calc(50% - 50vw) 0;
+    max-width: none;
+    min-height: unset;
+    width: 100vw;
+  }
+
+  .split-grid.reverse {
+    gap: 1.5rem;
+  }
+
+  .proposta-text {
+    border-left: 0;
+    border-top: 4px solid var(--text-gold);
+    padding-left: 0;
+    padding-top: 1.25rem;
+  }
 }

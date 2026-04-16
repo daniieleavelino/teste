@@ -20,6 +20,7 @@
 /* ===== BASE ===== */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -28,6 +29,7 @@ body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   margin: 0;
+  overflow-x: hidden;
 }
 
 /* Link de pular para o conteÃºdo */
@@ -62,9 +64,16 @@ body {
   background: rgba(247, 244, 238, 0.92);
   border-bottom: 1px solid rgba(200, 160, 74, 0.15);
   backdrop-filter: blur(8px);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
+}
+
+main {
+  padding-top: 5.5rem;
 }
 
 /* Layout interno do header com logo e navegaÃ§Ã£o */
@@ -398,7 +407,7 @@ h2 {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  padding-top: 0;
+  padding: 5rem 0;
 }
 
 /* ðŸ‘‡ IMAGEM DE FUNDO REAL */
@@ -696,10 +705,29 @@ textarea:focus {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 920px) {
+  .nav-container {
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+  }
+
   .site-header .container {
     width: 100%;
     padding-left: 0.9rem;
-    padding-right: 0;
+    padding-right: 0.9rem;
+  }
+
+  .site-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    will-change: transform;
+  }
+
+  main {
+    padding-top: 5.5rem;
   }
 
   /* ===== LAYOUT GLOBAL ===== */
@@ -715,7 +743,12 @@ textarea:focus {
   /* ===== NAVBAR MOBILE ===== */
   .menu-toggle {
     display: inline-block;
+    margin-left: auto;
     margin-right: 0;
+  }
+
+  nav[aria-label="Navegação principal"] {
+    position: static;
   }
 
   .menu {
@@ -728,7 +761,7 @@ textarea:focus {
     padding: 0.9rem;
     pointer-events: none;
     position: absolute;
-    right: 4%;
+    right: 0.9rem;
     top: 72px;
     transform: translateY(-6px);
     transition: all 0.25s ease;
@@ -753,7 +786,7 @@ textarea:focus {
 
   .hero .container {
     min-height: auto;
-    padding-bottom: 1.25rem;
+    padding-bottom: 0;
     padding-top: 0;
     display: flex;
     align-items: flex-start;
@@ -823,7 +856,7 @@ textarea:focus {
   }
 
   .hero {
-    padding-top: 0;
+    padding: 3.25rem 0;
   }
 
   .institutional-image {

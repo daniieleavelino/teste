@@ -9,6 +9,23 @@ if (toggleButton && menu) {
     menu.classList.toggle('is-open');
   });
 
+  document.addEventListener('click', (event) => {
+    const clickedInsideMenu = menu.contains(event.target);
+    const clickedToggle = toggleButton.contains(event.target);
+
+    if (!clickedInsideMenu && !clickedToggle) {
+      menu.classList.remove('is-open');
+      toggleButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      menu.classList.remove('is-open');
+      toggleButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       menu.classList.remove('is-open');
