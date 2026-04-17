@@ -257,9 +257,7 @@ h2 {
 
 /* EspaÃ§amento vertical padrÃ£o entre seÃ§Ãµes */
 .section {
-  padding: 5rem 0;
-  scroll-margin-top: 4.8rem;
-}
+  padding: 5rem 0;  scroll-margin-top: 5rem;}
 
 /* Fundo alternativo para seÃ§Ãµes destacadas */
 .alt-bg {
@@ -854,7 +852,7 @@ textarea:focus {
 
 @media (max-width: 920px) {
   .section {
-    padding: 1rem 0;
+    padding: 3.25rem 0;
   }
 
   .hero {
