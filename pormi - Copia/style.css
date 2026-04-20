@@ -65,35 +65,6 @@ body {
 }
 
 /* =========================================
-   AVISO DE COOKIES (LGPD)
-   ========================================= */
-.cookie-banner {
-    position: fixed;
-    bottom: -150px; /* Começa escondido abaixo da tela */
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.98); /* Fundo branco com levíssima transparência */
-    border-top: 2px solid var(--gold-primary);
-    padding: 1.2rem 0;
-    z-index: 9999;
-    opacity: 0;
-    backdrop-filter: blur(10px); /* Efeito de vidro esfumaçado igual aos iPhones */
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); /* Animação extremamente suave */
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
-}
-
-.cookie-banner.show {
-    bottom: 0;
-    opacity: 1;
-}
-
-@media (max-width: 768px) {
-    .cookie-banner {
-        padding: 1.5rem 0; /* Um pouco mais de espaço no celular para facilitar o clique no botão */
-    }
-}
-
-/* =========================================
    BOTÕES PERSONALIZADOS
    ========================================= */
 .btn-gold {
@@ -128,40 +99,6 @@ body {
 .btn-gold-outline:hover {
     background-color: var(--gold-primary);
     color: #fff;
-}
-
-/* =========================================
-   ESTILIZAÇÃO DA LOGO SVG
-   ========================================= */
-
-/* Logo na Navbar: Tamanho delicado para não "engordar" a barra */
-.nav-logo {
-    height: 55px; /* Altura ideal para navbars de luxo */
-    width: auto;
-    transition: transform 0.3s ease;
-}
-
-/* Efeito sutil ao passar o mouse na logo */
-.navbar-brand:hover .nav-logo {
-    transform: scale(1.05);
-}
-
-/* Logo no Footer: Um pouco mais imponente */
-.footer-brand-img {
-    height: 55px; /* Destaque maior no encerramento da página */
-    width: auto;
-    /* Se a logo for muito clara e o fundo do footer for o Grafite (#181818), 
-       ela vai brilhar perfeitamente. */
-}
-
-/* Ajuste para Mobile: Diminuir um pouco a logo no celular */
-@media (max-width: 768px) {
-    .nav-logo {
-        height: 35px;
-    }
-    .footer-brand-img {
-        height: 60px;
-    }
 }
 
 /* =========================================

@@ -46,31 +46,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
-// =========================================
-// LÓGICA DO BANNER DE COOKIES (LGPD)
-// =========================================
-document.addEventListener("DOMContentLoaded", function() {
-    const cookieBanner = document.getElementById('cookie-banner');
-    const acceptCookiesBtn = document.getElementById('accept-cookies');
-
-    if (cookieBanner && acceptCookiesBtn) {
-        // Verifica no LocalStorage se a noiva já clicou em aceitar no passado
-        if (!localStorage.getItem('cookiesAccepted_PormiArt')) {
-            // Se não aceitou, mostramos o banner. 
-            // O setTimeout de 1.5 segundos cria uma experiência de luxo: a noiva entra, 
-            // vê a capa linda, e só depois o aviso desliza suavemente.
-            setTimeout(() => {
-                cookieBanner.classList.add('show');
-            }, 1500);
-        }
-
-        // Quando ela clica no botão dourado
-        acceptCookiesBtn.addEventListener('click', () => {
-            // Salva a permissão no navegador dela
-            localStorage.setItem('cookiesAccepted_PormiArt', 'true');
-            // Remove a classe para esconder o banner suavemente
-            cookieBanner.classList.remove('show');
-        });
-    }
-});
