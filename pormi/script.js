@@ -1,5 +1,13 @@
 // Aguarda o carregamento completo do DOM
 document.addEventListener("DOMContentLoaded", function() {
+
+    // INICIALIZAR O AOS (Animações de luxo)
+    AOS.init({
+        duration: 1000, /* Duração da animação em milissegundos (1 segundo = suave) */
+        once: true,     /* IMPORTANTE: true faz a animação acontecer só uma vez. Se for false, fica a piscar cada vez que rola a página (efeito "ioiô", nada elegante). */
+        easing: 'ease-out-cubic', /* Efeito de travagem suave no final da animação */
+        offset: 100     /* O elemento começa a animar quando está 100px dentro do ecrã */
+    });
     
     // Efeito de rolagem na Navbar
     const navbar = document.getElementById("mainNav");

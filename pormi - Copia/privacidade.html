@@ -4,28 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidade | Pormí Art</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-sand">
 
     <nav class="navbar navbar-expand-lg fixed-top nav-scrolled border-bottom">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2 py-0" href="index.html">
-                <img src="img/icone-dente-de-leao.svg" alt="Pormí Art" class="nav-logo-icon" style="height: 35px; width: auto;">
-                <span class="font-serif text-gold fs-3 mb-0" style="letter-spacing: 1px;">Pormí Art</span>
+            <a class="navbar-brand py-0" href="index.html">
+                <img src="imagens/logo.svg" alt="Pormí Art" class="nav-logo">
             </a>
-            <div class="collapse navbar-collapse justify-content-end">
-                <ul class="navbar-nav gap-3">
-                    <li class="nav-item"><a class="nav-link text-dark" href="index.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="galeria.html">Galeria</a></li>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navPrivacidade">
+                <i class="bi bi-list text-gold fs-1"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navPrivacidade">
+                <ul class="navbar-nav align-items-center gap-3 py-3 py-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html">
+                            <i class="bi bi-arrow-left me-1"></i> Voltar ao Site
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="galeria.html">Galeria</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="py-spacing text-center mt-5">
+    <header class="py-spacing text-center mt-5" style="padding-top: 100px;">
         <div class="container">
             <h1 class="display-5 text-dark font-serif mt-3">Política de Privacidade</h1>
             <p class="text-muted fw-light max-w-700 mx-auto">Transparência e cuidado com os seus dados.</p>
@@ -52,14 +67,16 @@
 
     <footer class="bg-dark text-white pt-5 pb-4">
         <div class="container text-center">
-            <div class="mb-4">
-                <img src="img/icone-dente-de-leao.svg" alt="Pormí Art" class="img-fluid mx-auto d-block" style="height: 60px;">
+            <div class="mb-4 d-flex justify-content-center">
+                <img src="imagens/logo.svg" alt="Pormí Art" class="img-fluid footer-brand-img mx-auto d-block">
             </div>
+            
             <div class="border-top border-secondary pt-3">
                 <p class="small text-white-50 mb-0">&copy; 2026 Pormí Art. Todos os direitos reservados. | <a href="privacidade.html" class="text-gold text-decoration-none">Política de Privacidade</a></p>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

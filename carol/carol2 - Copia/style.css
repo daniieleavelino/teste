@@ -1,0 +1,47 @@
+:root {
+    --dark-blue: #1B263B;
+    --teal: #38A3A2;
+    --orange: #FF9F1C;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-blue);
+}
+
+/* Header */
+.navbar { transition: all 0.3s ease; }
+.nav-link { color: var(--dark-blue) !important; margin: 0 10px; }
+.nav-link:hover { color: var(--teal) !important; }
+
+/* Botões */
+.btn-orange {
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 50px;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+.btn-orange:hover {
+    transform: translateY(-3px);
+    background-color: #e68a00;
+    color: var(--white);
+}
+
+/* Hero & Images */
+.hero-section { padding: 160px 0 100px; background-color: #f8f9fa; }
+
+.img-blob {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Backgrounds */
+.bg-teal { background-color: var(--teal) !important; }
+.text-teal { color: var(--teal); }

@@ -1,0 +1,94 @@
+﻿:root {
+    --dark-blue: #1B263B;
+    --teal: #38A3A2;
+    --orange: #FF9F1C;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-blue);
+}
+
+/* Header */
+.navbar { transition: all 0.3s ease; }
+.nav-link { color: var(--dark-blue) !important; margin: 0 10px; }
+.nav-link:hover { color: var(--teal) !important; }
+
+/* BotÃµes */
+.btn-orange {
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 50px;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+}
+.btn-orange:hover {
+    transform: translateY(-3px);
+    background-color: #e68a00;
+    color: var(--white);
+}
+
+/* Hero & Images */
+.hero-section { padding: 160px 0 100px; background-color: #f8f9fa; }
+
+.img-blob {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Backgrounds */
+.bg-teal { background-color: var(--teal) !important; }
+.text-teal { color: var(--teal); }
+
+/* Metodologia */
+.metodo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* Depoimentos */
+.depoimentos-wrapper { align-items: center; gap: 12px; }
+.depo-viewport { flex: 1 1 auto; overflow: hidden; min-width: 0; }
+.depo-track { transition: transform 0.45s cubic-bezier(.22,.9,.34,1); }
+.depo-card { min-width: 320px; max-width: 420px; }
+.depo-avatar { width: 64px; height: 64px; object-fit: cover; }
+.depo-btn { width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 48px; position: relative; z-index: 2; }
+
+@media (max-width: 768px) {
+    .metodo-grid { grid-template-columns: 1fr; }
+    .depo-card { min-width: 100%; }
+    .depo-btn { display: none; }
+}
+
+/* Metodo (carol2) */
+.grid-template-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.tech-card { text-align: left; border-radius: 12px; }
+.tech-card strong { color: var(--dark-blue); }
+
+/* Footer */
+.bg-dark-blue { background-color: var(--dark-blue); }
+.text-secondary { color: #6c757d !important; }
+
+.reveal { opacity: 1; transform: none; transition: opacity 0.6s ease, transform 0.6s ease; }
+/* Garantir que a classe .reveal sobreponha a regra mais especÃ­fica section.py-5 */
+section.py-5.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+section.py-5 { opacity: 0; transform: translateY(24px); }
+
+/* EspaÃ§amento entre seÃ§Ãµes: aumenta paddings e adiciona separaÃ§Ã£o visual */
+.py-5 {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+}
+
+/* EspaÃ§amento extra entre seÃ§Ãµes consecutivas para evitar aparÃªncia "colada" */
+section + section {
+    margin-top: 28px;
+}
+
