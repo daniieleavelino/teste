@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => { // Aguarda toda a página 
             const targetElement = document.querySelector(targetId); // Encontra a seção de destino.
             if (targetElement) { // Se a seção existe, faz a rolagem suave.
                 e.preventDefault(); // Previne o comportamento padrão do link.
-                const headerHeight = document.getElementById('mainNav').offsetHeight; // Altura da navbar fixa.
+                const navHeader = document.querySelector('nav.navbar') || document.getElementById('mainNav');
+                const headerHeight = navHeader ? navHeader.offsetHeight : 0; // Altura da navbar fixa.
                 const elementPosition = targetElement.getBoundingClientRect().top; // Distância até o topo da tela.
                 const offsetPosition = elementPosition + window.pageYOffset - (headerHeight - 10); // Ajusta para não esconder atrás do topo.
                 window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); // Faz a rolagem suave.
@@ -54,10 +55,54 @@ document.addEventListener('DOMContentLoaded', () => { // Aguarda toda a página 
         });
     }, observerOptions);
 
-    document.querySelectorAll('h2').forEach(el => { // Prepara títulos para aparecerem com efeito.
-        el.style.opacity = '0'; // Começa invisível.
-        el.style.transform = 'translateY(20px)'; // Começa deslocado para baixo.
-        el.style.transition = 'all 0.6s ease-out'; // Define a transição suave.
+    document.querySelectorAll('h2, .animate-on-scroll').forEach(el => { // Prepara títulos e blocos marcados para aparecerem com efeito.
+        if (!el.classList.contains('animate-on-scroll')) {
+            el.style.opacity = '0'; // Começa invisível.
+            el.style.transform = 'translateY(20px)'; // Começa deslocado para baixo.
+            el.style.transition = 'all 0.6s ease-out'; // Define a transição suave.
+        }
         observer.observe(el); // Inicia a observação do elemento.
     });
+
+    // ---- Animação de entrada do hero (texto) ----
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        // força repaint/espera pequena antes de adicionar classe para transição suave
+        setTimeout(() => heroTitle.classList.add('show'), 120);
+    }
+
+    // ---- Parallax simples para mockups e blob na hero ----
+    const mockupContainer = document.querySelector('.hero-mockup-container');
+    const mockupBack = document.querySelector('.mockup-back');
+    const mockupFront = document.querySelector('.mockup-front');
+    const mockupRight = document.querySelector('.mockup-right-phone');
+    const blob = document.querySelector('.hero-blob-vibrante');
+
+    if (mockupContainer && (mockupBack || mockupFront || mockupRight || blob)) {
+        mockupContainer.addEventListener('mousemove', (e) => {
+            const rect = mockupContainer.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 .. 0.5
+            const y = (e.clientY - rect.top) / rect.height - 0.5; // -0.5 .. 0.5
+
+            if (mockupBack) {
+                mockupBack.style.transform = `perspective(1000px) rotateY(${ -x * 8 }deg) rotateX(${ y * 4 }deg) translateX(${ x * 8 }px) translateY(${ y * -6 }px)`;
+            }
+            if (mockupFront) {
+                mockupFront.style.transform = `perspective(2000px) translateX(${ x * 14 }px) translateY(${ y * 10 }px) rotateY(${ -x * 6 }deg) rotateZ(-3deg)`;
+            }
+            if (mockupRight) {
+                mockupRight.style.transform = `perspective(2000px) translateX(${ x * 18 }px) translateY(${ y * 12 }px) rotateY(${ -x * 5 }deg) rotateZ(5deg)`;
+            }
+            if (blob) {
+                blob.style.transform = `translate(${ x * 18 }px, ${ y * 14 }px) scale(1.02)`;
+            }
+        });
+
+        mockupContainer.addEventListener('mouseleave', () => {
+            if (mockupBack) mockupBack.style.transform = '';
+            if (mockupFront) mockupFront.style.transform = '';
+            if (mockupRight) mockupRight.style.transform = '';
+            if (blob) blob.style.transform = '';
+        });
+    }
 });
