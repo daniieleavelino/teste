@@ -106,3 +106,31 @@ document.addEventListener('DOMContentLoaded', () => { // Aguarda toda a página 
         });
     }
 });
+
+// --------- LGPD: AVISO DE COOKIES ---------
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+
+    // Verifica se já existe o aceite no armazenamento local
+    if (cookieBanner && acceptBtn) {
+        if (!localStorage.getItem('cianopink_cookie_consent')) {
+            // Se não tem, mostra o banner com um pequeno atraso para não assustar o usuário
+            setTimeout(() => {
+                cookieBanner.classList.add('show');
+            }, 1500);
+        }
+
+        // Quando clica em aceitar
+        acceptBtn.addEventListener('click', () => {
+            // Salva no navegador do usuário por 365 dias
+            localStorage.setItem('cianopink_cookie_consent', 'accepted');
+            
+            // Esconde o banner
+            cookieBanner.classList.remove('show');
+            
+            // Remove do DOM após a animação de descida
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 600);
+        });
+    }

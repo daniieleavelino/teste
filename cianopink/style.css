@@ -200,11 +200,10 @@ h1, h2, h3, h4 {
     position: absolute;
     right: 15%;
     top: 10%;
-    width: 80%;
     max-width: 450px;
     z-index: 1;
     transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
-    border: 8px solid white;
+    
     transition: transform 0.5s ease;
 }
 
@@ -212,14 +211,13 @@ h1, h2, h3, h4 {
 .mockup-front {
     position: absolute;
     left: 0;
-    bottom: 10%;
-    width: 45%;
+    bottom: 16%;
+    width:50%;
     max-width: 250px;
-    z-index: 2;
-    transform: perspective(2000px) translateX(10%) rotateY(-3deg) rotateZ(3deg);
-    border: 10px solid #1c1c1c;
+    z-index: 3;
+    transform: perspective(1000px) rotateY(-15deg) rotateX(4deg);
     border-radius: 35px;
-    
+     transition: transform 0.6s ease;
 }
 
 /* Estiliza e posiciona o mockup em formato de celular no lado direito, forçando proporção 9:19 */
@@ -228,15 +226,13 @@ h1, h2, h3, h4 {
     bottom: 17%;
     right: 1%;
     width: 20%;
-    aspect-ratio: 9.5 / 19;
-    object-fit: cover;
+    aspect-ratio: 8.9 / 19;
     border: 3px solid #1c1c1c;
-    border-radius: 25px;   
-    background-color: #0000;
-    z-index: 3;
-    filter: drop-shadow(20px 20px 40px rgba(0, 0, 0, 0.3));
-    transform: perspective(2000px) rotateY(-5deg) rotateZ(5deg);
-    transition: all 0.4s ease;
+    object-fit: cover;    
+    border-radius: 15px;       
+    z-index: 3;    
+    transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
+     transition: transform 0.5s ease;
 }
 
 /* Ajusta o posicionamento do mockup direito do celular em tablets e telas médias */
@@ -401,6 +397,12 @@ h1, h2, h3, h4 {
 a.media-half:hover img {
     transform: scale(1.06);
 }
+/* Esconder botão "Ver Portfólio" no mobile (telas pequenas) */
+@media (max-width: 767px) {
+    #hero .btn-outline-dark {
+        display: none !important;
+    }
+}
 
 /* Define espaçamento, fundo branco e alinhamento do texto ao lado da imagem do projeto */
 .text-half {
@@ -552,28 +554,25 @@ a.media-half:hover img {
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-/* ==========================================================================
-   --------- RESPONSIVIDADE EXTRA ---------
+/* ==========================================================================  
+   --------- RESPONSIVIDADE COMPLETA (REFATORADA) ---------  
    ========================================================================== */
 
-@media (min-width: 768px) {
-    .equal-split-card {
-        min-height: 100%;
-    }
-
-    .equal-split-card .media-half,
-    .equal-split-card .text-half {
-        flex: 1 1 50%;
-    }
-}
-
 @media (max-width: 991px) {
+
+    /* HERO */
     .hero-title {
         max-width: none;
+        text-align: center;
+    }
+
+    #hero .row {
+        text-align: center;
     }
 
     .hero-mockup-container {
-        height: 500px;
+        height: auto;
+        margin-top: 40px;
     }
 
     .hero-blob-vibrante {
@@ -586,7 +585,76 @@ a.media-half:hover img {
     }
 }
 
+
+/* ================= MOBILE REAL ================= */
+@media (max-width: 576px) {
+
+    /* -------- HERO TEXTO -------- */
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.1;
+        padding-top: 40px
+    }
+
+    #hero p {
+        font-size: 0.95rem;
+        padding: 0 10px;
+        
+    }
+
+    /* -------- BOTÕES -------- */
+
+
+    #hero .d-flex {
+        justify-content: center;
+    }
+
+    #hero .btn {
+        width: 100%;
+        padding: 16px;
+    }
+
+    /* -------- MOCKUPS -------- */
+
+    /* escondemos os secundários */
+    .mockup-front,
+    .mockup-right-phone {
+        display: none;
+    }
+
+    /* mockup principal (BACK) */
+    .mockup-back {
+        position: relative;
+        width: 95%;
+        max-width: 320px;
+        margin: 0 auto;
+        right: auto;
+        top: auto;
+        transform: none;
+    }
+
+    /* container ajustado */
+    .hero-mockup-container {
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    /* -------- BLOB -------- */
+    .hero-blob-vibrante {
+        width: 115%;
+        left: -10%;
+        top: -30%;
+        opacity: 0.6;
+    }
+}
+
+
+/* ================= OUTRAS SEÇÕES MOBILE ================= */
 @media (max-width: 767px) {
+
     .project-card {
         aspect-ratio: auto;
         min-height: 420px;
@@ -614,4 +682,71 @@ a.media-half:hover img {
     }
 }
 
+/* ==========================================================================
+   --------- AVISO DE COOKIES (LGPD) ---------
+   ========================================================================== */
 
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(19, 16, 24, 0.85); /* Fundo escuro com transparência */
+    backdrop-filter: blur(12px); /* Efeito de vidro (Glassmorphism) */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(48, 197, 255, 0.2); /* Borda sutil ciano */
+    border-radius: 20px;
+    padding: 20px;
+    z-index: 9999;
+    transform: translateY(150%);
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Classe adicionada via JS para fazer o banner subir suavemente */
+.cookie-banner.show {
+    transform: translateY(0);
+}
+
+.cookie-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cookie-icon i {
+    font-size: 2rem;
+    color: var(--color-cyan);
+}
+
+.cookie-text .text-cyan {
+    color: var(--color-cyan);
+}
+
+.cookie-text .text-cyan:hover {
+    color: var(--color-pink);
+    text-decoration: underline !important;
+}
+
+/* Ajustes para Mobile */
+@media (max-width: 767px) {
+    .cookie-banner {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 15px;
+    }
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .cookie-actions {
+        width: 100%;
+    }
+    .cookie-actions .btn {
+        width: 100%;
+    }
+}
