@@ -235,13 +235,8 @@ h1, h2, h3, h4 {
      transition: transform 0.5s ease;
 }
 
-/* Ajusta o posicionamento do mockup direito do celular em tablets e telas médias */
-@media (max-width: 991px) {
-    .mockup-right-phone {
-        width: 30%;
-        right: 0;
-        bottom: 5%;
-    }
+.hero-banner-mobile {
+    display: none;
 }
 
 /* Aplica transição suave aos efeitos de movimento de todos os mockups da hero */
@@ -399,8 +394,9 @@ a.media-half:hover img {
 }
 /* Esconder botão "Ver Portfólio" no mobile (telas pequenas) */
 @media (max-width: 767px) {
+    /* reexibir botão secundário no mobile (override de outras regras) */
     #hero .btn-outline-dark {
-        display: none !important;
+        display: inline-block !important;
     }
 }
 
@@ -583,28 +579,78 @@ a.media-half:hover img {
     .process-line {
         display: none;
     }
+    /* remover a linha indicadora do link ativo no mobile (corrige artefato no menu colapsado) */
+    .active-link::after {
+        display: none !important;
+    }
 }
 
 
-/* ================= MOBILE REAL ================= */
+/* ================= HERO MOBILE (NOVO) ================= */
 @media (max-width: 576px) {
 
-    /* -------- HERO TEXTO -------- */
+    /* -------- ORDEM -------- */
+    #hero .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-mockup-container {
+        order: -1;
+        width: 100%;
+        margin-top: 0;
+        height: auto;
+    }
+
+    /* -------- MOSTRA BANNER -------- */
+    .hero-banner-mobile {
+        display: block;
+        width: 100vw;
+        max-width: none;
+        position: relative;
+        /* centraliza exatamente no viewport (evita gaps do container) */
+        left: 50vw;
+        transform: translateX(-50%) translateY(calc(-1 * var(--navbar-height, 56px)));
+        margin: 0;
+        z-index: 0; /* abaixo da navbar fixa */
+    }
+    /* subir toda a coluna de conteúdo (título, texto, botões) sem mexer no desktop */
+    #hero .col-lg-6.position-relative.z-2 {
+        transform: translateY(-36px);
+    }
+    /* Espaçamento extra no final do hero para que o conteúdo seguinte não fique sobreposto */
+    #hero {
+        padding-bottom: calc(var(--navbar-height, 56px) + 24px);
+    }
+
+    /* -------- REMOVE MOCKUPS -------- */
+    .mockup-back,
+    .mockup-front,
+    .mockup-right-phone {
+        display: none;
+    }
+
+    /* -------- BLOB -------- */
+    .hero-blob-vibrante {
+        display: none;
+    }
+
+    /* -------- TEXTO -------- */
     .hero-title {
         font-size: 2.2rem;
         line-height: 1.1;
-        padding-top: 40px
+        text-align: center;
+        margin-top: 30px;
     }
 
-    #hero p {
-        font-size: 0.95rem;
-        padding: 0 10px;
-        
+    /* Subir título, texto e botões levemente para evitar que fiquem muito abaixo da imagem */
+    .hero-title {
+        margin-top: 6px; /* reduz espaço acima do título */
     }
 
-    /* -------- BOTÕES -------- */
+    
 
-
+    /* -------- BOTÃO -------- */
     #hero .d-flex {
         justify-content: center;
     }
@@ -614,43 +660,11 @@ a.media-half:hover img {
         padding: 16px;
     }
 
-    /* -------- MOCKUPS -------- */
-
-    /* escondemos os secundários */
-    .mockup-front,
-    .mockup-right-phone {
-        display: none;
-    }
-
-    /* mockup principal (BACK) */
-    .mockup-back {
-        position: relative;
-        width: 95%;
-        max-width: 320px;
-        margin: 0 auto;
-        right: auto;
-        top: auto;
-        transform: none;
-    }
-
-    /* container ajustado */
-    .hero-mockup-container {
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 30px;
-    }
-
-    /* -------- BLOB -------- */
-    .hero-blob-vibrante {
-        width: 115%;
-        left: -10%;
-        top: -30%;
-        opacity: 0.6;
+    /* mostrar botão secundário no mobile */
+    #hero .btn-outline-dark {
+        display: inline-block !important;
     }
 }
-
 
 /* ================= OUTRAS SEÇÕES MOBILE ================= */
 @media (max-width: 767px) {

@@ -133,4 +133,21 @@ document.addEventListener('DOMContentLoaded', () => { // Aguarda toda a página 
                 cookieBanner.style.display = 'none';
             }, 600);
         });
+
+        // --------- FECHAR MENU MOBILE AO CLICAR FORA ---------
+document.addEventListener('click', function (e) {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+
+    if (!navbarCollapse || !navbarToggler) return;
+
+    const isMenuOpen = navbarCollapse.classList.contains('show');
+
+    const clickedInsideMenu = navbarCollapse.contains(e.target);
+    const clickedToggler = navbarToggler.contains(e.target);
+
+    if (isMenuOpen && !clickedInsideMenu && !clickedToggler) {
+        navbarToggler.click();
+    }
+});
     }
