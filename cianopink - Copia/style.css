@@ -682,3 +682,71 @@ a.media-half:hover img {
     }
 }
 
+/* ==========================================================================
+   --------- AVISO DE COOKIES (LGPD) ---------
+   ========================================================================== */
+
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(19, 16, 24, 0.85); /* Fundo escuro com transparência */
+    backdrop-filter: blur(12px); /* Efeito de vidro (Glassmorphism) */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(48, 197, 255, 0.2); /* Borda sutil ciano */
+    border-radius: 20px;
+    padding: 20px;
+    z-index: 9999;
+    transform: translateY(150%);
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Classe adicionada via JS para fazer o banner subir suavemente */
+.cookie-banner.show {
+    transform: translateY(0);
+}
+
+.cookie-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cookie-icon i {
+    font-size: 2rem;
+    color: var(--color-cyan);
+}
+
+.cookie-text .text-cyan {
+    color: var(--color-cyan);
+}
+
+.cookie-text .text-cyan:hover {
+    color: var(--color-pink);
+    text-decoration: underline !important;
+}
+
+/* Ajustes para Mobile */
+@media (max-width: 767px) {
+    .cookie-banner {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 15px;
+    }
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .cookie-actions {
+        width: 100%;
+    }
+    .cookie-actions .btn {
+        width: 100%;
+    }
+}
