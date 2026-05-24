@@ -239,25 +239,6 @@ body {
 /* =========================================
    SERVIÇOS (Cards)
    ========================================= */
-/* SOBRE */
-#sobre .image-frame {
-    max-width: 430px;
-    margin: 0 auto;
-}
-
-#sobre .image-frame img {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    object-position: center;
-}
-
-@media (max-width: 991.98px) {
-    #sobre .image-frame {
-        max-width: 360px;
-    }
-}
-
 .img-zoom-wrapper {
     position: relative;
 }

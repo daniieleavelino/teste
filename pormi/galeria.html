@@ -54,8 +54,8 @@
                 <ul class="navbar-nav align-items-center gap-3">
                     <li class="nav-item"><a class="nav-link text-dark" href="index.html#sobre">A Artista</a></li>
                     <li class="nav-item"><a class="nav-link text-dark" href="index.html#servicos">Criações</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark active" href="galeria.html">Noivas Reais</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="index.html#depoimentos">Histórias</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark active" href="galeria.html">Galeria</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="index.html#depoimentos">Histórias Reais</a></li>
                     <li class="nav-item"><a class="btn btn-gold-outline ms-lg-3" href="index.html#contato">Fale
                             Conosco</a></li>
                 </ul>
@@ -79,92 +79,23 @@
                 <button class="btn filter-btn" data-filter="buques">Buquês</button>
                 <button class="btn filter-btn" data-filter="cabelo">Acessórios de Cabelo</button>
                 <button class="btn filter-btn" data-filter="lapelas">Lapelas & Corsages</button>
+                <button class="btn filter-btn" data-filter="guirlandas">Guirlandas</button>
+                <button class="btn filter-btn" data-filter="garrafas">Garrafas Decorativas</button>
             </div>
 
-            <div class="row g-4 gallery-grid">
+            <script type="application/json" id="gallery-images">
+                [
+                    { "category": "buques", "label": "Buque floral artesanal", "images": ["imagens/buques/1.webp", "imagens/buques/3.webp", "imagens/buques/4.webp", "imagens/buques/5.webp", "imagens/buques/6.webp", "imagens/buques/7.webp", "imagens/buques/8.webp", "imagens/buques/9.webp", "imagens/buques/10.webp", "imagens/buques/11.webp"] },
+                    { "category": "cabelo", "label": "Pente luxo floral", "images": ["imagens/pente luxo/1.webp", "imagens/pente luxo/2.webp", "imagens/pente luxo/3.webp", "imagens/pente luxo/4.webp", "imagens/pente luxo/5.webp", "imagens/pente luxo/6.webp", "imagens/pente luxo/7.webp", "imagens/pente luxo/8.webp"] },
+                    { "category": "cabelo", "label": "Presilha Decora-Flor", "images": ["imagens/presilhas - decora-flor/1.webp", "imagens/presilhas - decora-flor/2.webp", "imagens/presilhas - decora-flor/3.webp", "imagens/presilhas - decora-flor/4.webp", "imagens/presilhas - decora-flor/5.webp", "imagens/presilhas - decora-flor/6.webp", "imagens/presilhas - decora-flor/7.webp"] },
+                    { "category": "lapelas", "label": "Lapela para casamento", "images": ["imagens/lapelas para casamento/1.webp", "imagens/lapelas para casamento/2.webp", "imagens/lapelas para casamento/3.webp", "imagens/lapelas para casamento/4.webp", "imagens/lapelas para casamento/5.webp", "imagens/lapelas para casamento/6.webp", "imagens/lapelas para casamento/7.webp", "imagens/lapelas para casamento/8.webp", "imagens/lapelas para casamento/9.webp", "imagens/lapelas para casamento/10.webp"] },
+                    { "category": "lapelas", "label": "Corsage floral artesanal", "images": ["imagens/corsage/1.webp", "imagens/corsage/2.webp", "imagens/corsage/3.webp", "imagens/corsage/4.webp", "imagens/corsage/5.webp"] },
+                    { "category": "guirlandas", "label": "Guirlanda de primavera", "images": ["imagens/guirlandas primavera/1.webp", "imagens/guirlandas primavera/2.webp", "imagens/guirlandas primavera/3.webp", "imagens/guirlandas primavera/4.webp", "imagens/guirlandas primavera/5.webp", "imagens/guirlandas primavera/7.webp", "imagens/guirlandas primavera/8.webp"] },
+                    { "category": "garrafas", "label": "Garrafa floral decorativa", "images": ["imagens/garrafas florais decorativas/1.webp", "imagens/garrafas florais decorativas/2.webp", "imagens/garrafas florais decorativas/3.webp", "imagens/garrafas florais decorativas/4.webp", "imagens/garrafas florais decorativas/5.webp"] }
+                ]
+            </script>
 
-                <div class="col-sm-6 col-lg-4 gallery-item buques">
-                    <a href="https://images.unsplash.com/photo-1572451475713-33e9b1016766?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90"
-                        class="glightbox" data-gallery="portfolio"
-                        data-description="Buquê rústico com capim dos pampas e rosas desidratadas.">
-                        <div class="gallery-card overflow-hidden rounded-custom shadow-soft">
-                            <img src="https://images.unsplash.com/photo-1572451475713-33e9b1016766?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Buquê" class="img-fluid gallery-img">
-                            <div class="gallery-overlay">
-                                <i class="bi bi-zoom-in fs-2 text-white"></i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-lg-4 gallery-item cabelo">
-                    <a href="https://images.unsplash.com/photo-1606214532657-3f820ee758d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90"
-                        class="glightbox" data-gallery="portfolio"
-                        data-description="Pente floral delicado com tons de dourado e terracota.">
-                        <div class="gallery-card overflow-hidden rounded-custom shadow-soft">
-                            <img src="https://images.unsplash.com/photo-1606214532657-3f820ee758d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Acessório Cabelo" class="img-fluid gallery-img">
-                            <div class="gallery-overlay">
-                                <i class="bi bi-zoom-in fs-2 text-white"></i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-lg-4 gallery-item lapelas">
-                    <a href="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90"
-                        class="glightbox" data-gallery="portfolio"
-                        data-description="Lapela para noivo combinando com o buquê.">
-                        <div class="gallery-card overflow-hidden rounded-custom shadow-soft">
-                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Lapela" class="img-fluid gallery-img">
-                            <div class="gallery-overlay">
-                                <i class="bi bi-zoom-in fs-2 text-white"></i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-lg-4 gallery-item buques">
-                    <a href="https://images.unsplash.com/photo-1546193430-c2d207739ed7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90"
-                        class="glightbox" data-gallery="portfolio">
-                        <div class="gallery-card overflow-hidden rounded-custom shadow-soft">
-                            <img src="https://images.unsplash.com/photo-1546193430-c2d207739ed7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Noiva com Buquê" class="img-fluid gallery-img">
-                            <div class="gallery-overlay">
-                                <i class="bi bi-zoom-in fs-2 text-white"></i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-lg-4 gallery-item cabelo">
-                    <a href="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90"
-                        class="glightbox" data-gallery="portfolio">
-                        <div class="gallery-card overflow-hidden rounded-custom shadow-soft">
-                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Detalhe de flores" class="img-fluid gallery-img">
-                            <div class="gallery-overlay">
-                                <i class="bi bi-zoom-in fs-2 text-white"></i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-sm-6 col-lg-4 gallery-item lapelas">
-                    <a href="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=90"
-                        class="glightbox" data-gallery="portfolio">
-                        <div class="gallery-card overflow-hidden rounded-custom shadow-soft">
-                            <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                alt="Lapela Rústica" class="img-fluid gallery-img">
-                            <div class="gallery-overlay">
-                                <i class="bi bi-zoom-in fs-2 text-white"></i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
+            <div class="row g-4 gallery-grid"></div>
         </div>
     </section>
 
