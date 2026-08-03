@@ -168,21 +168,30 @@ body {
    NAVBAR & SCROLL
    ========================================= */
 .transition-nav {
-    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
     padding: 1.5rem 0;
     background-color: transparent;
+    border-bottom: 1px solid transparent;
 }
 
 .nav-scrolled {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(249, 246, 240, 0.98);
     padding: 0.8rem 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border-bottom-color: rgba(197, 160, 89, 0.32);
+    box-shadow: 0 10px 28px rgba(44, 44, 44, 0.12);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .nav-scrolled .nav-link, 
 .nav-scrolled .navbar-brand {
     color: var(--text-dark) !important;
+}
+
+.nav-scrolled .nav-link:hover,
+.nav-scrolled .nav-link:focus,
+.nav-scrolled .nav-link.active {
+    color: var(--gold-primary) !important;
 }
 
 .nav-link {
@@ -207,6 +216,11 @@ body {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.nav-scrolled .navbar-collapse.show,
+.nav-scrolled .navbar-collapse.collapsing {
+    background-color: rgba(249, 246, 240, 0.98);
 }
 
 .custom-toggler {
@@ -246,6 +260,7 @@ body {
 }
 
 #sobre .image-frame img {
+    display: block;
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
@@ -255,6 +270,27 @@ body {
 @media (max-width: 991.98px) {
     #sobre .image-frame {
         max-width: 360px;
+    }
+}
+
+@media (min-width: 992px) {
+    #sobre .row {
+        align-items: stretch !important;
+    }
+
+    #sobre .row > .col-lg-6:first-child {
+        display: flex;
+        justify-content: center;
+    }
+
+    #sobre .image-frame {
+        width: 100%;
+        height: 100%;
+    }
+
+    #sobre .image-frame img {
+        height: 100%;
+        aspect-ratio: auto;
     }
 }
 
