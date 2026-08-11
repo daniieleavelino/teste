@@ -136,7 +136,7 @@ background: var(--accent-gold);
 .hero-section {
 min-height: calc(85vh - 72px); /* Altura da seção */
 margin-top: 72px;
-background: linear-gradient(rgba(45, 45, 45, 0.6), rgba(45, 45, 45, 0.48)), url('imagens/hhh.jpg') center/cover no-repeat;
+background: linear-gradient(rgba(45, 45, 45, 0.6), rgba(45, 45, 45, 0.48)), url('imagens/dada.jpg') center/cover no-repeat;
 padding-top: 0;
 }
 
