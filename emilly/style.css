@@ -134,15 +134,20 @@ background: var(--accent-gold);
 
 /* Configura a seção inicial definindo altura mínima, fundo com gradiente linear e recuo no topo para evitar a navbar */
 .hero-section {
-min-height: 85vh; /* Altura da seção */
-background: linear-gradient(135deg, #fff 0%, var(--secondary-green) 100%);
-padding-top: 80px; /* REDUZIDO: Estava em 120px, empurrava tudo para baixo */
+min-height: calc(85vh - 72px); /* Altura da seção */
+margin-top: 72px;
+background: linear-gradient(rgba(45, 45, 45, 0.6), rgba(45, 45, 45, 0.48)), url('imagens/hhh.jpg') center/cover no-repeat;
+padding-top: 0;
+}
+
+.hero-section h1 {
+color: var(--white);
 }
 
 /* Ajusta o texto secundário da hero definindo tamanho elegante, cor discreta e limitando a largura máxima */
 .hero-section .lead {
 font-size: 1.05rem; /* REDUZIDO: Mais elegante e ocupa menos espaço */
-color: var(--text-muted);
+color: rgba(255, 255, 255, 0.9);
 max-width: 550px;
 }
 
