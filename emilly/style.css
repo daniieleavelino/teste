@@ -11,6 +11,7 @@
 --text-muted: #5A5A5A;       /* Texto secundário */
 --bg-light: #F8F9FA;         /* Fundo claro */
 --white: #ffffff;            /* Branco puro */
+--navbar-height: 72px;
 }
 
 /* Configurações gerais do corpo da página (fonte, cor do texto, fundo e espaçamento entre linhas) */
@@ -134,10 +135,22 @@ background: var(--accent-gold);
 
 /* Configura a seção inicial definindo altura mínima, fundo com gradiente linear e recuo no topo para evitar a navbar */
 .hero-section {
-min-height: calc(85vh - 72px); /* Altura da seção */
-margin-top: 72px;
-background: linear-gradient(rgba(45, 45, 45, 0.6), rgba(45, 45, 45, 0.48)), url('imagens/dada.jpg') center/cover no-repeat;
+min-height: calc(100vh - var(--navbar-height));
+min-height: calc(100svh - var(--navbar-height));
+margin-top: var(--navbar-height);
+background-image: linear-gradient(rgba(45, 45, 45, 0.6), rgba(45, 45, 45, 0.48)), url('imagens/hero-desktop.webp');
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
 padding-top: 0;
+}
+
+/* Em telas pequenas, a primeira imagem será usada assim que o arquivo for adicionado.
+   Enquanto isso, dada.jpg permanece como fallback. */
+@media (max-width: 767.98px) {
+.hero-section {
+    background-image: linear-gradient(rgba(45, 45, 45, 0.6), rgba(45, 45, 45, 0.48)), url('imagens/hero-mobile.webp')
+}
 }
 
 .hero-section h1 {
