@@ -591,8 +591,7 @@ min-width: 0;
 overflow-wrap: anywhere;
 }
 
-@media (max-width: 991.98px), (orientation: portrait) {
-.cookie-bar {
+@media (max-width: 991.98px), (orientation: portrait) {.cookie-bar {
     bottom: 12px;
     left: 12px;
     right: 12px;
