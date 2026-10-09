@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F7F4EE">
+  <title>Entorno de aprendizaje LinQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png">
+</head>
+<body style="background: var(--bg-soft);">
+  <header class="site-header" id="topo">
+    <div class="container nav-container" style="align-items: center;">
+      <a class="brand" href="inicio.html" aria-label="LinQ - Entorno de aprendizaje">
+        <img src="imagens/logo-header.webp" alt="" class="logo">
+        <span class="brand-text">
+          <img src="imagens/linq-wordmark.svg" alt="LinQ" class="wordmark wordmark-header">
+          <span class="brand-sub">MENTORIA LINGUÍSTICA</span>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="learning-main">
+    <section class="container" aria-labelledby="page-title">
+      <div class="learning-heading">
+        <h1 id="page-title">Entorno de aprendizaje LinQ</h1>
+        <p class="lead">Elige tu nivel para acceder a los módulos de estudio.</p>
+      </div>
+      <div class="learning-grid level-image-grid">
+        <a class="level-image-link" href="a1.html" aria-label="Acceder al nivel A1, Principiante"><img src="imagens/capas-niveis/nivel-a1.svg" alt="Nivel A1 — Principiante"></a>
+        <a class="level-image-link" href="a2.html" aria-label="Acceder al nivel A2, Elemental"><img src="imagens/capas-niveis/nivel-a2.svg" alt="Nivel A2 — Elemental"></a>
+        <a class="level-image-link" href="b1.html" aria-label="Acceder al nivel B1, Intermedio"><img src="imagens/capas-niveis/nivel-b1.svg" alt="Nivel B1 — Intermedio"></a>
+        <a class="level-image-link" href="b2.html" aria-label="Acceder al nivel B2, Intermedio avanzado"><img src="imagens/capas-niveis/nivel-b2.svg" alt="Nivel B2 — Intermedio avanzado"></a>
+        <a class="level-image-link" href="c1.html" aria-label="Acceder al nivel C1, Avanzado"><img src="imagens/capas-niveis/nivel-c1.svg" alt="Nivel C1 — Avanzado"></a>
+        <a class="level-image-link" href="c2.html" aria-label="Acceder al nivel C2, Maestría"><img src="imagens/capas-niveis/nivel-c2.svg" alt="Nivel C2 — Maestría"></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> <img src="imagens/linq-wordmark.svg" alt="LinQ" class="wordmark wordmark-inline"> Mentoría Lingüística. Todos los derechos reservados | <a href="privacidade.html">Política de privacidad</a></p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
