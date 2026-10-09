@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Nivel B1</title><desc id="desc">Intermedio — LinQ</desc>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#345b67"/><stop offset="1" stop-color="#173844"/></linearGradient></defs>
+  <rect width="640" height="480" rx="28" fill="url(#bg)"/>
+  <circle cx="525" cy="96" r="142" fill="#c98935" opacity=".16"/>
+  <circle cx="80" cy="430" r="180" fill="#fff" opacity=".045"/>
+  <path d="M365 0h275v275z" fill="#c98935" opacity=".12"/>
+  <path d="M0 352c142-65 275 51 415-18 89-44 156-35 225-10v156H0z" fill="#fff" opacity=".055"/>
+  <text x="54" y="76" fill="#fff" opacity=".82" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" letter-spacing="4">LINQ · ESPAÑOL</text>
+  <text x="48" y="292" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="178" font-weight="700" letter-spacing="-10">B1</text>
+  <rect x="55" y="330" width="66" height="5" rx="2.5" fill="#c98935"/>
+  <text x="55" y="383" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="600" letter-spacing="2">INTERMEDIO</text>
+  <text x="55" y="433" fill="#fff" opacity=".72" font-family="Inter,Arial,sans-serif" font-size="15" letter-spacing="1">EXPLORA ESTE NIVEL  ↗</text>
+</svg>

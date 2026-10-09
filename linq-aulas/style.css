@@ -300,6 +300,55 @@ h2 {
   margin-top: 2rem;
 }
 
+.level-image-link {
+  border-radius: 16px;
+  display: block;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.level-image-link:hover,
+.level-image-link:focus-visible {
+  box-shadow: 0 12px 28px rgba(31, 78, 95, 0.18);
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 3px;
+  transform: translateY(-4px);
+}
+
+.level-image-link img {
+  aspect-ratio: 4 / 3;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.learning-card-image {
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, rgba(31, 78, 95, 0.08), rgba(215, 154, 58, 0.12));
+  border: 1px dashed rgba(31, 78, 95, 0.3);
+  border-radius: 12px;
+  color: rgba(31, 78, 95, 0.68);
+  display: flex;
+  font-size: 0.82rem;
+  justify-content: center;
+  margin: 0 0 1.25rem;
+  width: 100%;
+}
+
+.learning-card-image::before {
+  content: "＋";
+  font-size: 1.3rem;
+  margin-right: 0.4rem;
+}
+
+img.learning-card-image {
+  border-style: solid;
+  display: block;
+  object-fit: cover;
+}
+
 .learning-card {
   align-items: flex-start;
   display: flex;
