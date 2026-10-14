@@ -300,6 +300,28 @@ h2 {
   margin-top: 2rem;
 }
 
+.learning-grid.module-grid {
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.module-grid .learning-card {
+  padding: 1rem;
+}
+
+.module-grid .learning-card h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.module-grid .learning-card p {
+  font-size: 0.92rem;
+}
+
+.module-grid .learning-card > div:not(.learning-card-image) {
+  width: 100%;
+}
+
 .level-image-link {
   border-radius: 16px;
   display: block;
@@ -358,6 +380,10 @@ img.learning-card-image {
   min-height: 210px;
 }
 
+.card.learning-card--cover {
+  border-top: 0;
+}
+
 .learning-card h2,
 .learning-card h3 {
   margin-bottom: 0.5rem;
@@ -383,6 +409,30 @@ img.learning-card-image {
   margin-top: auto;
   padding: 0.55rem 1rem;
   width: auto;
+}
+
+.learning-card .module-arrow {
+  align-items: center;
+  align-self: flex-start;
+  border-radius: 50%;
+  display: inline-flex;
+  font-size: 2rem;
+  height: 2.75rem;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  width: 2.75rem;
+}
+
+.learning-card .module-arrow svg {
+  display: block;
+  fill: none;
+  height: 1.5rem;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 2rem;
 }
 
 .learning-card .btn-primary {
@@ -922,6 +972,10 @@ textarea:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .learning-grid.module-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   /* ===== NAVBAR MOBILE ===== */
   .menu-toggle {
     display: inline-block;
@@ -1068,6 +1122,10 @@ textarea:focus {
 
 @media (max-width: 560px) {
   .learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-grid.module-grid {
     grid-template-columns: 1fr;
   }
 
